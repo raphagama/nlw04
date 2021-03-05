@@ -1,11 +1,11 @@
 import { Column, CreateDateColumn, Entity, PrimaryColumn } from "typeorm";
-import { v4 as uuid } from 'uuid'
+import { v4 as uuid } from 'uuid';
 
 @Entity("users")
 class User {
 
     @PrimaryColumn()
-    id: string;
+     readonly id: string;
 
     @Column()
     name: string;
@@ -18,7 +18,7 @@ class User {
 
     constructor() {
         if(!this.id) {
-            this.id = uuid()
+            this.id = uuid();
         }
     }
 
